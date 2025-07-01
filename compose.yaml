@@ -1,8 +1,15 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  remove-bg-app:
+  remove-bg:
     build: .
     ports:
       - "5000:5000"
     restart: unless-stopped
+    environment:
+      - FLASK_ENV=production
+    # Uncomment jika ingin limit memory
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 512M

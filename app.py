@@ -35,37 +35,3 @@ def remove_background():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
-
-
-
-# def base64_to_image(base64_str):
-#     image_data = base64.b64decode(base64_str)
-#     return Image.open(io.BytesIO(image_data))
-
-# def image_to_base64(image):
-#     buffered = io.BytesIO()
-#     image.save(buffered, format="PNG")
-#     return base64.b64encode(buffered.getvalue()).decode()
-
-# @app.route('/remove-bg', methods=['POST'])
-# def remove_bg():
-#     try:
-#         data = request.json
-#         if 'image_base64' not in data:
-#             return jsonify({'error': 'Missing image_base64 key'}), 400
-
-#         base64_str = data['image_base64']
-#         input_image = base64_to_image(base64_str).convert("RGBA")
-
-#         output_image = remove(input_image)
-#         output_image = Image.fromarray(np.array(output_image))
-
-#         output_base64 = image_to_base64(output_image)
-
-#         return jsonify({'image_base64': output_base64})
-
-#     except Exception as e:
-#         return jsonify({'error': str(e)}), 500
-
-# if __name__ == '__main__':
-#     app.run(debug=True)

@@ -34,7 +34,8 @@ def remove_background():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
+
 
 
 # def base64_to_image(base64_str):
